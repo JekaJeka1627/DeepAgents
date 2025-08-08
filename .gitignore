@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.build/
+
+# Environments
+.venv/
+venv/
+.env
+.env.local
+
+# Node / Frontend
+node_modules/
+dist/
+build/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Project-specific
+_DriveSync/
+_ChatGPTSync/
+
+# Logs
+*.log
+
+# Misc
+*.swp
+*.swo

@@ -1,0 +1,14 @@
+# Core
+deepagents
+langchain>=0.2.0
+langgraph>=0.2.0
+
+# Providers (pick any via env)
+langchain-openai>=0.1.0
+langchain-anthropic>=0.1.0
+langchain-google-genai>=0.1.0
+langchain-community>=0.2.0
+
+# Optional utilities
+python-dotenv>=1.0.1
+rich>=13.7

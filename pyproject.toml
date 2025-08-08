@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deepagents-cli"
+version = "0.1.0"
+description = "Conversational CLI wrapper for deepagents"
+authors = [{name = "Jesse Katz"}]
+readme = "README.md"
+requires-python = ">=3.11"
+# Dependencies are managed via requirements.txt for now
+
+[project.scripts]
+deepagents = "deepagents_cli.cli:console_main"
+
+[tool.setuptools]
+packages = ["deepagents_cli", "deepagents_cli.agent"]
