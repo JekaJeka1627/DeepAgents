@@ -12,3 +12,7 @@ langchain-community>=0.2.0
 # Optional utilities
 python-dotenv>=1.0.1
 rich>=13.7
+
+# Web operations (Claude Code-style commands)
+requests>=2.31.0
+beautifulsoup4>=4.12.0

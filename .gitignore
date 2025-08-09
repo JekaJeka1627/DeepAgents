@@ -27,6 +27,15 @@ Thumbs.db
 # Project-specific
 _DriveSync/
 _ChatGPTSync/
+deepagents_last_selection.json
+.deepagents/
+*.backup
+get-pip.py
+
+# Test files (redundant ones)
+quick_test_enhanced.py
+test_basic.py  
+test_enhanced.py
 
 # Logs
 *.log

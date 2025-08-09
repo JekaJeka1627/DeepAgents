@@ -276,11 +276,13 @@ def _run_git(args: list[str], max_kb: int = 256) -> str:
 
 
 def git_status() -> str:
+    """Get git repository status."""
     log("tool:git_status")
     return _run_git(["status", "--porcelain", "--branch"]) or "(clean)"
 
 
 def git_diff(path: str | None = None, staged: bool = False, max_kb: int = 256) -> str:
+    """Show git diff for changes."""
     log(f"tool:git_diff path={path} staged={staged} max_kb={max_kb}")
     args = ["diff"]
     if staged:
@@ -291,6 +293,7 @@ def git_diff(path: str | None = None, staged: bool = False, max_kb: int = 256) -
 
 
 def git_log(n: int = 20) -> str:
+    """Show git commit log."""
     log(f"tool:git_log n={n}")
     return _run_git(["log", f"-n{int(n)}", "--oneline", "--decorate", "--graph"]) 
 
@@ -309,6 +312,7 @@ def git_add(paths: str) -> str:
 
 
 def git_add_all() -> str:
+    """Stage all changes in the repository."""
     log("tool:git_add_all")
     return _run_git(["add", "-A"]) or "staged all changes"
 
@@ -402,6 +406,7 @@ TASKS: list[dict] = []
 
 
 def tasks_add(text: str) -> str:
+    """Add a new task to the task list."""
     log(f"tool:tasks_add text='{text}'")
     tid = len(TASKS) + 1
     TASKS.append({"id": tid, "text": text, "done": False})
@@ -409,6 +414,7 @@ def tasks_add(text: str) -> str:
 
 
 def tasks_done(task_id: int) -> str:
+    """Mark a task as completed."""
     log(f"tool:tasks_done id={task_id}")
     for t in TASKS:
         if t["id"] == int(task_id):
@@ -418,6 +424,7 @@ def tasks_done(task_id: int) -> str:
 
 
 def tasks_list() -> str:
+    """List all tasks in the task tracker."""
     log("tool:tasks_list")
     if not TASKS:
         return "(no tasks)"
@@ -429,6 +436,7 @@ def tasks_list() -> str:
 
 
 def tasks_clear(done_only: bool = False) -> str:
+    """Clear tasks from the task tracker."""
     log(f"tool:tasks_clear done_only={done_only}")
     global TASKS
     if done_only:
